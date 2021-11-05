@@ -14,7 +14,7 @@ typedef struct{
 
 pte_loc find(uint64_t pt, uint64_t vpn){
     pte_loc location;
-    uint64_t* first_node = (int64_t*)phys_to_virt(pt << 12);
+    uint64_t* first_node = (uint64_t*)phys_to_virt(pt << 12);
     uint64_t* curr_node = first_node;
     uint64_t curr_symbol;
     uint64_t curr_pte;
