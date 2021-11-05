@@ -49,23 +49,13 @@ void* phys_to_virt(uint64_t phys_addr)
 
 int main(int argc, char **argv)
 {
-    printf("\n\tstating main function:\n"); // todo delete
-
 	uint64_t pt = alloc_page_frame();
-
-	printf("\n\tallocated mem\n"); // todo delete
 
 	assert(page_table_query(pt, 0xcafe) == NO_MAPPING);
 
-	printf("\n\ttable at 0xcafe is empty as should be \n"); // todo delete
-
 	page_table_update(pt, 0xcafe, 0xf00d);
 
-	printf("\n\tupdated 0xcafe address with ppn oxf00d\n"); // todo delete
-
 	assert(page_table_query(pt, 0xcafe) == 0xf00d);
-
-	printf("\n\tupdate function worked\n"); // todo delete
 
 	page_table_update(pt, 0xcafe, NO_MAPPING);
 	assert(page_table_query(pt, 0xcafe) == NO_MAPPING);
