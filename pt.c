@@ -1,7 +1,9 @@
 //
-// Created by gail1 on 30-Oct-21.
+// Operation Systems Course Exercise 1
+// Avigail Ben Eliyahu
+// ID 305703720
+// 30-Oct-21.
 //
-#include <stdio.h> // todo delete
 #include "os.h"
 
 typedef struct{
@@ -70,7 +72,6 @@ void page_table_update(uint64_t pt, uint64_t vpn, uint64_t ppn){
         if (location.valid == 0){
             return;
         } else{
-            printf("\n\t\t changed valid bit to 0.\n");
             *(location.pte_ptr) = ((*(location.pte_ptr)) & (~1)); //changing valid bit to 0 (in the last node)
         }
     }
